@@ -4,7 +4,7 @@
 # Goal: Implement a binary search routine
 # Method 01: Tail Recursion approach
 
-def chop(target_int, source_list, index_count_i=0):
+def chop(target_int, source_list, index_count=0):
 	# If we run out of list to search, return -1
 	# This signifies that the integer is not in the list
 	if source_list == []:
@@ -22,8 +22,8 @@ def chop(target_int, source_list, index_count_i=0):
 	# If the number we're checking against is too small, cut the list, take the lower half 
 	elif target_int < source_list[half_len - 1]:
 		# take [:half_len - 1], otherwise it takes too much and throws off the index
-		return chop(target_int, source_list[:half_len - 1], index_count_i)
+		return chop(target_int, source_list[:half_len - 1], index_count)
 	
 	# ... Otherwise, take the upper half of the list.
 	elif target_int > source_list[half_len - 1]:
-		return chop(target_int, source_list[half_len:], index_count_i + half_len)
+		return chop(target_int, source_list[half_len:], index_count + half_len)
