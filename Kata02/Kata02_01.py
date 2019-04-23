@@ -6,7 +6,7 @@
 
 def chop(target_int, source_list, index_count_i=0):
 	# If we run out of list to search, return -1
-	# Signifies that the integer isn't in the list
+	# This signifies that the integer is not in the list
 	if source_list == []:
 		return -1
 	
@@ -19,10 +19,11 @@ def chop(target_int, source_list, index_count_i=0):
 	if target_int == source_list[half_len - 1]:
 		return index_count + half_len - 1
 	
-	# If it's too small, cut the list, take the lower half 
+	# If the number we're checking against is too small, cut the list, take the lower half 
 	elif target_int < source_list[half_len - 1]:
-		# take [:half_len - 1], otherwise it takes too much and throws off index
+		# take [:half_len - 1], otherwise it takes too much and throws off the index
 		return chop(target_int, source_list[:half_len - 1], index_count_i)
 	
+	# ... Otherwise, take the upper half of the list.
 	elif target_int > source_list[half_len - 1]:
 		return chop(target_int, source_list[half_len:], index_count_i + half_len)
