@@ -5,7 +5,7 @@
 # Goal: Implement a binary search routine. Testing with this script
 # http://codekata.com/kata/kata02-karate-chop/
 
-import Kata02_03 as chopper
+import Kata02_01 as chopper
 import os
 
 
@@ -20,7 +20,7 @@ def assert_equal(test_case, counter):
     # If we run into an error, print out the error
     except Exception as e:
         print(str(counter).zfill(2),": ","->Fail with Error:")
-        print(e)New File
+        print(e)
 
 # Iterates through all test cases using
 def the_ringer():
